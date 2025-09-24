@@ -7,9 +7,15 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "https://info-spark.netlify.app", // Your live Netlify frontend
+  origin: [
+    "https://info-spark.netlify.app", 
+    "http://localhost:5173", 
+    "http://localhost:5174", 
+    "http://localhost:5175"
+  ], // Your live Netlify frontend
   credentials: true, // optional, only if sending cookies or auth headers
 }));
+
 app.use(express.json());
 
 // Routes
